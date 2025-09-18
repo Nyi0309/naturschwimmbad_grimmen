@@ -1,26 +1,53 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+@theme {
+
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 960px;
+    --breakpoint-xl: 1200px;
+
+    --color-primary: #000;
+    --color-primary-light: #535353;
+    --color-secondary: #fff;
+    --color-accent: oklch(60.9% 0.126 221.723);
+    --color-accent-secondary: #18abbc;
+    --color-accent-tertiary: #90c6cd;
+
+    --background-image-cta: url('/assets/cta/cta.jpg');
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-primary: var(--font-manrope);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@utility container {
+  margin-inline: auto;
+  padding-inline: 15px;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+body{
+  @apply text-primary-light font-primary text-lg font-normal leading-6;
+}
+
+h1,h2,h3, h4, h5, h6 {
+  @apply leading-[120%];
+}
+
+.h1 {
+  @apply xl:text-6xl text-4xl font-bold;
+}
+
+.h2 {
+  @apply xl:text-[48px] text-3xl font-extrabold tracking-wide;
+}
+
+.h3 {
+  @apply xl:text-3xl text-xl font-bold;
+}
+
+.section {
+  @apply xl:pt-[130px] pt-12;
 }
